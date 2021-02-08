@@ -1,8 +1,49 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿<!--
+/***************************************************************
+* Name        : Index.cshtml
+* Author      : Tom Sorteberg
+* Created     : 02/07/2021
+* Course      : CIS 174
+* Version     : 1.0
+* OS          : Windows 10 Pro, Visual Studio Community 2019
+* Copyright   : This is my own original work based on
+*               specifications issued by our instructor
+* Description : Module 2 Topic 3
+* I have not used unauthorized source code, either modified or
+* unmodified. I have not given other fellow student(s) access
+* to my program.
+***************************************************************/
+-->
+@model List<Contact>
+@{
+    ViewBag.Title = "My Contacts";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h2>Contact List</h2>
+
+<a asp-controller="Contact" asp-action="Add">Add New Contact</a>
+<table class="table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Address</th>
+            <th>Notes</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var contact in Model)
+        {
+            <tr>
+                <td>@contact.Name</td>
+                <td>@contact.Phone</td>
+                <td>@contact.Address</td>
+                <td>@contact.Note</td>
+                <td>
+                    <a asp-controller="Contact" asp-action="Edit" asp-route-id="@contact.ContactId" class="btn btn-primary">Edit</a>
+                    <a asp-controller="Contact" asp-action="Delete" asp-route-id="@contact.ContactId" class="btn btn-primary">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
