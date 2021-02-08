@@ -32,5 +32,8 @@ namespace MultiPageWebApp.Models
         public string Address { get; set; }
 
         public string Note { get; set; }
+
+        // Slug definition and initialization.
+        public string Slug => Name?.Replace(' ', '-').ToLower();
     }
 }
