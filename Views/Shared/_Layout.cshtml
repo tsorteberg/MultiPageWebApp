@@ -1,0 +1,40 @@
+﻿<!--
+/***************************************************************
+* Name        : _Layout.cshtml
+* Author      : Tom Sorteberg
+* Created     : 02/07/2021
+* Course      : CIS 174
+* Version     : 1.0
+* OS          : Windows 10 Pro, Visual Studio Community 2019
+* Copyright   : This is my own original work based on
+*               specifications issued by our instructor
+* Description : Multi-Page Web App w/DB Assignment
+* I have not used unauthorized source code, either modified or
+* unmodified. I have not given other fellow student(s) access
+* to my program.
+***************************************************************/
+-->
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" type="text/css" href="~/lib/bootstrap/css/bootstrap.min.css" />
+
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="jumbotron">
+            <h1>My Contacts</h1>
+        </header>
+        @RenderBody()
+    </div>
+
+</body>
+
+</html>
